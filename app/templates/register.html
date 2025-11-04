@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="http://localhost:5000/static/styles/registerPageLayout.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/registerPageLayout.css') }}">
 </head>
 <body>
     <div class="register-container">
@@ -36,6 +36,6 @@
             Already have an account? <a id="login-link" href="/login">Login</a>
         </p>
     </div>
-    <script src="http://localhost:5000/static/js/registerpageJava.js"></script>
+    <script src="{{ url_for('static', filename='js/registerpageJava.js') }}"></script>
 </body>
 </html>

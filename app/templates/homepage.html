@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crossword Game</title>
   
-  <link rel="stylesheet" href="http://localhost:5000/static/styles/layout.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/layout.css') }}">
 </head>
 <body>
      <!-- Falling images container -->
@@ -15,7 +15,7 @@
      <div class="container">
         <!-- the title box picture -->
         <div class="title-box">
-           <img src="http://localhost:5000/static/Crossword%20image.png" alt="Crossword">
+           <img src="{{ url_for('static', filename='Crossword%20image.png') }}" alt="Crossword">
         </div>
 
          <!--
@@ -50,6 +50,6 @@
         </div>
     </div>
 
-    <script src="http://localhost:5000/static/js/welcomepageJava.js"></script>
+    <script src="{{ url_for('static', filename='js/welcomepageJava.js') }}"></script>
 </body>
 </html>
