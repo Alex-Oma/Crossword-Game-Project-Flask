@@ -49,7 +49,9 @@
             <button onclick="closeAllPopups()">close</button>
         </div>
     </div>
-
+    <script>
+      const baseURL = "{{ url_for('static', filename='') }}";
+    </script>
     <script src="{{ url_for('static', filename='js/welcomepageJava.js') }}"></script>
 </body>
 </html>

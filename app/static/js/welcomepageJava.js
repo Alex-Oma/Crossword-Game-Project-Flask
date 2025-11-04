@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       randomImage = imageFiles[Math.floor(Math.random() * imageFiles.length)];
     }
-    img.src = `http://localhost:5000/static/imagesHomepage/${randomImage}`;
+    img.src = `${baseURL}imagesHomepage/${randomImage}`;
     img.className = 'falling-image';
     
     const randomLeft = Math.random() * (window.innerWidth - 50);
