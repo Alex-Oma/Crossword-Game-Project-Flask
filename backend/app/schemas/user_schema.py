@@ -1,0 +1,27 @@
+from app.models.user import User
+
+class UserSchema:
+    @staticmethod
+    def dump(user):
+        return {
+            'id': user.id,
+            'username': user.username,
+            'password': user.password,
+            'email': user.email,
+            'security_token': user.security_token
+        }
+
+    @staticmethod
+    def load(data):
+        if 'email' in data:
+            email = data['email']
+        else:
+            email = None
+
+        return User(
+            user_id=data.get('id'),
+            username=data['username'],
+            password=data['password'],
+            security_token=data['security_token'],
+            email=email
+        )
