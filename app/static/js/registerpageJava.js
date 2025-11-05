@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     show("Creating your account…");
 
     try {
-    const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(//$/, '') : '';
+    const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(/\/+$/, '') : '';
     const endpoint = apiBase ? ${apiBase}/api/game/auto_solve : '/api/user/register';
 
       const res = await fetch(endpoint, {

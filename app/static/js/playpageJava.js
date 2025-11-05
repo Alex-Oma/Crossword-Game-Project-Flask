@@ -341,7 +341,7 @@ function renderGameState() {
 async function startNewGame(difficulty) {
   difficulty = (difficulty || 'normal').toLowerCase();
   try {
-   const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(//$/, '') : '';
+   const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(/\/+$/, '') : '';
    const endpoint = apiBase ? ${apiBase}/api/game/auto_solve : '/api/game/start';
 
    const res = await fetch(endpoint, {
@@ -501,7 +501,7 @@ async function submitGuessWord() {
   }
 
   try {
-    const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(//$/, '') : '';
+    const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(/\/+$/, '') : '';
     const endpoint = apiBase ? ${apiBase}/api/game/auto_solve : '/api/game/guess_word';
 
     const res = await fetch(endpoint, {
@@ -607,7 +607,7 @@ async function submitSolveClue() {
   }
 
   try {
-    const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(//$/, '') : '';
+    const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(/\/+$/, '') : '';
     const endpoint = apiBase ? ${apiBase}/api/game/auto_solve : '/api/game/solve_clue';
 
     const res = await fetch(endpoint, {
@@ -736,7 +736,7 @@ async function submitAutoSolveCrossword() {
       return;
     }
     try {
-      const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(//$/, '') : '';
+      const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL).replace(/\/+$/, '') : '';
       const endpoint = apiBase ? ${apiBase}/api/game/auto_solve : '/api/game/auto_solve';
 
       const res = await fetch(endpoint, {
