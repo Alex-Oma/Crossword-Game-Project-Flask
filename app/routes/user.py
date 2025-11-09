@@ -104,8 +104,14 @@ def register():
                     }), 401
 
             # If no match found, let's register the new user
+            if current_app.config['DEBUG']:
+                print(f"Current LAST_USER_ID: {current_app.config['LAST_USER_ID']}")
+
             current_app.config['LAST_USER_ID'] += 1
             id = current_app.config['LAST_USER_ID']
+
+            if current_app.config['DEBUG']:
+                print(f"New LAST_USER_ID: {id}")
 
             # Let's generate a security token for the session
             security_token = generate_guid()
