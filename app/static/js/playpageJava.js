@@ -339,6 +339,7 @@ function renderGameState() {
 
 // Main function to start a new game
 async function startNewGame(difficulty) {
+  const session = loadSession() || {};
   difficulty = (difficulty || 'normal').toLowerCase();
   try {
    const apiBase = (typeof window !== 'undefined' && window.API_BASE_URL) ? String(window.API_BASE_URL) : '';
