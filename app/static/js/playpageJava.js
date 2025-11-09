@@ -34,6 +34,7 @@ function renderGrid(containerId, grid) {
   const table = document.createElement('table');
   table.className = 'crossword-table';
 
+  const session = loadSession() || {};
   // Get clues from session if available
   const clues = session.crossword?.clues || [];
   // Build a map of clue start positions to clue numbers
@@ -729,6 +730,7 @@ async function submitAutoSolveCrossword() {
 
   yesBtn.onclick = async function() {
     document.body.removeChild(confirmDialog);
+    const session = loadSession() || {};
     const userId = session.user_id;
     const token = session.security_token;
     const gameId = session.game_id;
