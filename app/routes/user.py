@@ -12,6 +12,9 @@ def login():
     try:
         # Retrieve JSON payload from request body
         data = request.get_json()
+        if current_app.config['DEBUG']:
+            print("Received data:", data)
+
         # Extract username and password
         username = data.get('username', None)
         password = data.get('password', None)
@@ -63,6 +66,9 @@ def register():
     try:
         # Retrieve JSON payload from request body
         data = request.get_json()
+        if current_app.config['DEBUG']:
+            print("Received data:", data)
+
         # Extract username and password
         username = data.get('username', None)
         password = data.get('password', None)
